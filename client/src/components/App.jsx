@@ -27,12 +27,13 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch('/rooms/bookings/listings')
+    let path = window.location.pathname;
+    fetch(`/rooms/bookings/listings${path}`)
     .then(res => res.json())
     .then((result) => {
-      console.log(result[1]);
+      console.log(result);
       this.setState({
-        listing: result[1]
+        listing: result[0]
       })
     },
     (err) => {

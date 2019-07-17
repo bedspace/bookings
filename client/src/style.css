@@ -1,4 +1,4 @@
-:global(#app) {
+:global(#bookings) {
   border: 1px solid #e4e4e4;
   width: 376px;
   /* height: 462px; */
@@ -125,7 +125,13 @@
   width: 326px;
 }
 
-img {
+/* img {
+  width: 30px;
+  height: auto;
+  margin: 10px 0 0 0;
+} */
+
+.rightFaceDatesArrow {
   width: 30px;
   height: auto;
   margin: 10px 0 0 0;

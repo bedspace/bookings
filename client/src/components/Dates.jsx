@@ -173,7 +173,8 @@ class Dates extends React.Component {
           }}>{this.props.checkIn}</div>
           
           <div className={style.datesArrow}>
-            <img src='https://i.ibb.co/Xbr3WN0/rightfacingarrow.png'/>
+            <img src='https://i.ibb.co/Xbr3WN0/rightfacingarrow.png'
+             className={style.rightFaceDatesArrow}/>
           </div>
           
           <div className={style.datesBtn} 

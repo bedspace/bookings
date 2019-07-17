@@ -9,10 +9,10 @@ const Test_Listings = require('./db/index.js').Test_Listings;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static(path.resolve(__dirname, '..', 'client', 'dist')));
+app.use('/:id', express.static(path.resolve(__dirname, '..', 'client', 'dist')));
 
-app.get('/rooms/bookings/listings', (req, res) => {
-  Listings.findAll()
+app.get('/rooms/bookings/listings/:id', (req, res) => {
+  Listings.findAll({ where: { id: req.params.id } })
   .then((results) => {
     res.send(results); 
   })
