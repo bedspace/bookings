@@ -1,0 +1,4 @@
+CREATE USER 'jb'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON *.* TO 'jb'@'localhost' WITH GRANT OPTION;
+CREATE USER 'jb'@'%' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON *.* TO 'jb'@'%' WITH GRANT OPTION;
