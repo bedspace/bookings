@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 const connection = new Sequelize('bookings', 'root', null, {
-  host: 'localhost',
+  host: 'host.docker.internal',
   dialect: 'mysql',
   logging: false
 })
