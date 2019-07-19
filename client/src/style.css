@@ -231,7 +231,7 @@
   border: 1px solid #e4e4e4;
   border-radius: 3px;
   margin: 20px 20px 15px 20px;
-  padding: 0 9px 5px 9px;
+  padding: 5px 9px 5px 9px;
   float: left;
 }
 
@@ -371,6 +371,7 @@ tbody {
   position: absolute;
   height: 300px;
   width: 294px;
+  /* width: 340px; */
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 6px, rgba(0, 0, 0, 0.07) 0px 0px 0px 1px;
   padding: 0 16px;
 }

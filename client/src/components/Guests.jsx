@@ -7,7 +7,7 @@ class Guests extends React.Component {
     this.state = {
       guestColor: '#fff',
       guestText: '#757575',
-      guestArrow: 'https://cdn0.iconfinder.com/data/icons/navigation-set-arrows-part-one/32/ExpandMore-512.png',
+      guestArrow: 'https://fec-hrsf119.s3-us-west-1.amazonaws.com/ExpandMore-512Down.png',
       guestPadding: '3px 0 3px 5px',
       infantPadding: '3px 5px 3px 0',
       borderBottom: '1px solid #e4e4e4',
@@ -31,10 +31,10 @@ class Guests extends React.Component {
     let babyPadding = this.state.infantPadding === '3px 5px 3px 0' ? '6px 0' : '3px 5px 3px 0';
     let arrowDir;
 
-    if (this.state.guestArrow === 'https://cdn0.iconfinder.com/data/icons/navigation-set-arrows-part-one/32/ExpandMore-512.png') {
-      arrowDir = 'https://i.ibb.co/2SdTGMC/Expand-More-512.png';
+    if (this.state.guestArrow === 'https://fec-hrsf119.s3-us-west-1.amazonaws.com/ExpandMore-512Down.png') {
+      arrowDir = 'https://fec-hrsf119.s3-us-west-1.amazonaws.com/ExpandMore-512.png';
     } else {
-      arrowDir = 'https://cdn0.iconfinder.com/data/icons/navigation-set-arrows-part-one/32/ExpandMore-512.png';
+      arrowDir = 'https://fec-hrsf119.s3-us-west-1.amazonaws.com/ExpandMore-512Down.png';
     }
     
     this.setState({

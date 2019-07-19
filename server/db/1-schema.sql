@@ -1,2 +1,1 @@
-DROP DATABASE bookings;
 CREATE DATABASE bookings;

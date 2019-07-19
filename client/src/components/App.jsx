@@ -197,11 +197,11 @@ class App extends React.Component {
         <p className={style.perNight}>per night</p>
 
         <div className={style.starContainer}>
-          <img src='https://i.ibb.co/NWJ1j37/new-Teal-Star.png' className={style.stars}/>
-          <img src='https://i.ibb.co/NWJ1j37/new-Teal-Star.png' className={style.stars}/>
-          <img src='https://i.ibb.co/NWJ1j37/new-Teal-Star.png' className={style.stars}/>
-          <img src='https://i.ibb.co/NWJ1j37/new-Teal-Star.png' className={style.stars}/>
-          <img src='https://i.ibb.co/NWJ1j37/new-Teal-Star.png' className={style.stars}/>
+          <img src='https://fec-hrsf119.s3-us-west-1.amazonaws.com/newTealStar.png' className={style.stars}/>
+          <img src='https://fec-hrsf119.s3-us-west-1.amazonaws.com/newTealStar.png' className={style.stars}/>
+          <img src='https://fec-hrsf119.s3-us-west-1.amazonaws.com/newTealStar.png' className={style.stars}/>
+          <img src='https://fec-hrsf119.s3-us-west-1.amazonaws.com/newTealStar.png' className={style.stars}/>
+          <img src='https://fec-hrsf119.s3-us-west-1.amazonaws.com/newTealStar.png' className={style.stars}/>
           <p className={style.reviewCount}>214</p>
         </div>
 

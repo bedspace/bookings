@@ -81,7 +81,7 @@ class Dates extends React.Component {
     let calendarCheckInPopUp = (
       <div className={style.calendarCheckInContainer}>
         <div className={style.swapMonth}>
-          <img src='https://i.ibb.co/QkSRK9K/leftfacingarrow.png'
+          <img src='https://fec-hrsf119.s3-us-west-1.amazonaws.com/leftfacingarrow.png'
            className={style.calendarArrow}
            onClick={() => {
              this.changeMonth('previous', this.props.month);
@@ -89,7 +89,7 @@ class Dates extends React.Component {
         </div>
         <p className={style.currentMonth}>{this.props.month} 2019</p>
         <div className={style.swapMonth}>
-          <img src='https://i.ibb.co/Xbr3WN0/rightfacingarrow.png'
+          <img src='https://fec-hrsf119.s3-us-west-1.amazonaws.com/rightfacingarrow.png'
            className={style.calendarArrow}
            onClick={() => {
              this.changeMonth('next', this.props.month);
@@ -119,7 +119,7 @@ class Dates extends React.Component {
     let calendarCheckOutPopUp = (
       <div className={style.calendarCheckOutContainer}>
         <div className={style.swapMonth}>
-          <img src='https://i.ibb.co/QkSRK9K/leftfacingarrow.png'
+          <img src='https://fec-hrsf119.s3-us-west-1.amazonaws.com/leftfacingarrow.png'
            className={style.calendarArrow}
            onClick={() => {
              this.changeMonth('previous', this.props.month);
@@ -127,7 +127,7 @@ class Dates extends React.Component {
         </div>
         <p className={style.currentMonth}>{this.props.month} 2019</p>
         <div className={style.swapMonth}>
-          <img src='https://i.ibb.co/Xbr3WN0/rightfacingarrow.png'
+          <img src='https://fec-hrsf119.s3-us-west-1.amazonaws.com/rightfacingarrow.png'
            className={style.calendarArrow}
            onClick={() => {
              this.changeMonth('next', this.props.month);
@@ -173,7 +173,7 @@ class Dates extends React.Component {
           }}>{this.props.checkIn}</div>
           
           <div className={style.datesArrow}>
-            <img src='https://i.ibb.co/Xbr3WN0/rightfacingarrow.png'
+            <img src='https://fec-hrsf119.s3-us-west-1.amazonaws.com/rightfacingarrow.png'
              className={style.rightFaceDatesArrow}/>
           </div>
           

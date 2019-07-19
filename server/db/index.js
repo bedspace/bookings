@@ -1,10 +1,13 @@
 const Sequelize = require('sequelize');
 const connection = new Sequelize('bookings', 'jb', 'password', {
-  host: 'host.docker.internal',
+  host: '172.19.0.2',
   dialect: 'mysql',
   logging: false,
-  port: 3307
+  port: 3306
 })
+
+// const connection = new Sequelize('mysql://root@database:3306/bookings');
+// const connection = new Sequelize('mysql://jb:pass@database:3306/bookings');
 
 connection
   .authenticate()
