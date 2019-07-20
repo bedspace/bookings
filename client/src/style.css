@@ -1,7 +1,6 @@
 :global(#bookings) {
   border: 1px solid #e4e4e4;
   width: 376px;
-  /* height: 462px; */
   height: auto;
   position: static;
   font-family: Circular, -apple-system, system-ui, 'Raleway', 'Montserrat', 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -73,7 +72,6 @@
   border-top: 1px solid #e4e4e4;
   border-bottom: 1px solid #e4e4e4;
   margin: 20px 0 25px 0;
-  /* height: 275px; */
   height: auto;
 }
 
@@ -124,12 +122,6 @@
   height: 42px;
   width: 326px;
 }
-
-/* img {
-  width: 30px;
-  height: auto;
-  margin: 10px 0 0 0;
-} */
 
 .rightFaceDatesArrow {
   width: 30px;
@@ -371,14 +363,12 @@ tbody {
   position: absolute;
   height: 300px;
   width: 294px;
-  /* width: 340px; */
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 6px, rgba(0, 0, 0, 0.07) 0px 0px 0px 1px;
   padding: 0 16px;
 }
 
 .guestsType {
   border: 1px solid #fff;
-  /* height: 34px; */
   height: auto;
   width: 294px;
   margin: 16px auto 0 auto;

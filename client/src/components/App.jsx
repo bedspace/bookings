@@ -2,7 +2,8 @@ import React from 'react';
 import Dates from './Dates.jsx';
 import Guests from './Guests.jsx';
 import Quote from './Quote.jsx';
-import axios from 'axios';
+// import axios from 'axios';
+import calendarData from '../calendarData.jsx';
 import style from '../style.css';
 
 class App extends React.Component {
@@ -41,78 +42,133 @@ class App extends React.Component {
     })
   }
 
-  fetchCalendarData(month) {
-    let monthParam = month.length === 0 ? 'July' : month;
-    let url = `/rooms/bookings/dates/${monthParam}`;
-    axios.get(url)
-    .then((results) => {
-      // console.log('FETCH CALENDAR DATA RESULTS:')
-      // console.log(results.data);
+  fetchCalendarData(selectedMonth) {
+    let results = {
+      data: calendarData[selectedMonth]
+    };
+ 
+    let month = [];
+    let week = [];
+    let weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    let emptyBox = {
+      type: 'emptyDay'
+    };
 
-      let month = [];
-      let week = [];
-      let weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-      let emptyBox = {
-        type: 'emptyDay'
-      };
+    for (var i = 0; i < results.data.length; i++) {
+      let currentDay = results.data[i];
+      currentDay['type'] = 'day';
+      if (i === 0 && currentDay.weekday !== 'Sunday') {
+        let firstIndex = weekdays.indexOf(currentDay.weekday);
+        
+        for (var j = 0; j < firstIndex; j++) {
+          week.unshift(emptyBox);
+        }
+        
+        week.push(currentDay); 
 
-      for (var i = 0; i < results.data.length; i++) {
-        let currentDay = results.data[i];
-        currentDay['type'] = 'day';
-        if (i === 0 && currentDay.weekday !== 'Sunday') {
-          let firstIndex = weekdays.indexOf(currentDay.weekday);
-          
-          for (var j = 0; j < firstIndex; j++) {
-            week.unshift(emptyBox);
-          }
-          
-          week.push(currentDay); 
-
-          if (currentDay.weekday === 'Saturday') {
-            month.push(week);
-            week = [];
-          }
-
-        } else if (currentDay.weekday === 'Saturday' && i !== results.data.length-1) {
-          week.push(currentDay);
+        if (currentDay.weekday === 'Saturday') {
           month.push(week);
           week = [];
-
-        } else if (i === results.data.length-1) {
-          week.push(currentDay);
-
-          if (currentDay.weekday !== 'Saturday') {
-            let lastIndex = weekdays.indexOf(currentDay.weekday);
-            let lastEmptyBoxCount = weekdays.length - (lastIndex+1);
-
-            for (var k = 0; k < lastEmptyBoxCount; k++) {
-              week.push(emptyBox);
-            }
-          }
-
-          month.push(week);
-
-        } else {
-          week.push(currentDay);
         }
+
+      } else if (currentDay.weekday === 'Saturday' && i !== results.data.length-1) {
+        week.push(currentDay);
+        month.push(week);
+        week = [];
+
+      } else if (i === results.data.length-1) {
+        week.push(currentDay);
+
+        if (currentDay.weekday !== 'Saturday') {
+          let lastIndex = weekdays.indexOf(currentDay.weekday);
+          let lastEmptyBoxCount = weekdays.length - (lastIndex+1);
+
+          for (var k = 0; k < lastEmptyBoxCount; k++) {
+            week.push(emptyBox);
+          }
+        }
+
+        month.push(week);
+
+      } else {
+        week.push(currentDay);
       }
+    }
 
-      console.log(month);
+    console.log(month);
 
-      this.setState({
-        currentCalendar: month,
-        currentMonth: monthParam
-      })
+    this.setState({
+      currentCalendar: month,
+      currentMonth: selectedMonth
     })
-    .catch((err) => {
-      console.log('ERROR ON FETCH CAL DATA:');
-      console.log(err);
-    })
+
+    // let monthParam = month.length === 0 ? 'July' : month;
+    // let url = `/rooms/bookings/dates/${monthParam}`;
+    // axios.get(url)
+    // .then((results) => {
+    //   // console.log('FETCH CALENDAR DATA RESULTS:')
+    //   // console.log(results.data);
+
+    //   let month = [];
+    //   let week = [];
+    //   let weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    //   let emptyBox = {
+    //     type: 'emptyDay'
+    //   };
+
+    //   for (var i = 0; i < results.data.length; i++) {
+    //     let currentDay = results.data[i];
+    //     currentDay['type'] = 'day';
+    //     if (i === 0 && currentDay.weekday !== 'Sunday') {
+    //       let firstIndex = weekdays.indexOf(currentDay.weekday);
+          
+    //       for (var j = 0; j < firstIndex; j++) {
+    //         week.unshift(emptyBox);
+    //       }
+          
+    //       week.push(currentDay); 
+
+    //       if (currentDay.weekday === 'Saturday') {
+    //         month.push(week);
+    //         week = [];
+    //       }
+
+    //     } else if (currentDay.weekday === 'Saturday' && i !== results.data.length-1) {
+    //       week.push(currentDay);
+    //       month.push(week);
+    //       week = [];
+
+    //     } else if (i === results.data.length-1) {
+    //       week.push(currentDay);
+
+    //       if (currentDay.weekday !== 'Saturday') {
+    //         let lastIndex = weekdays.indexOf(currentDay.weekday);
+    //         let lastEmptyBoxCount = weekdays.length - (lastIndex+1);
+
+    //         for (var k = 0; k < lastEmptyBoxCount; k++) {
+    //           week.push(emptyBox);
+    //         }
+    //       }
+
+    //       month.push(week);
+
+    //     } else {
+    //       week.push(currentDay);
+    //     }
+    //   }
+
+    //   console.log(month);
+
+    //   this.setState({
+    //     currentCalendar: month,
+    //     currentMonth: monthParam
+    //   })
+    // })
+    // .catch((err) => {
+    //   console.log('ERROR ON FETCH CAL DATA:');
+    //   console.log(err);
+    // })
   }
-
-  // fetchAvailableDates() {
-
-  // }
 
   updateGuestTotal(type, guest) {
     if (type === 'add') {

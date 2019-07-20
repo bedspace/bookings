@@ -16,7 +16,7 @@
   },
   "scripts": {
     "seed": "node ./server/db/seed.js",
-    "build": "webpack -d --watch",
+    "build": "webpack -p --watch",
     "start": "nodemon ./server/index.js",
     "test": "jest"
   },

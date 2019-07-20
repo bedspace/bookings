@@ -6,9 +6,6 @@ const connection = new Sequelize('bookings', 'jb', 'password', {
   port: 3306
 })
 
-// const connection = new Sequelize('mysql://root@database:3306/bookings');
-// const connection = new Sequelize('mysql://jb:pass@database:3306/bookings');
-
 connection
   .authenticate()
   .then(() => {
